@@ -4,8 +4,12 @@ import setting from "../assets/settings.svg";
 import more from "../assets/more.svg";
 import seniorwoman from "../assets/seniorwoman.png";
 import { NavLink } from 'react-router-dom';
-import { OverviewPage } from '../Pages/OverviewPage';
-import { PatientHome } from '../Pages/PatientHome';
+import home from "../assets/home.svg"
+import message from "../assets/message.svg"
+import patient from "../assets/patient.svg"
+import card from "../assets/card.svg"
+import calender from "../assets/calender.svg"
+
 
 
 export const Navbar = () => {
@@ -21,11 +25,11 @@ export const Navbar = () => {
                 <NavLink to={"/"}><img src={logo} alt='Logo' className='h-10 w-36' /></NavLink>
             </div>
             <div className='hidden md:flex space-x-8 text-[#072635] font-medium'>
-                <NavLink to={"/overview"}  >Overview</NavLink>
-                <NavLink to={'/'}>Patients</NavLink>
-                <a href=''>Schedule</a>
-                <a href=''>Messages</a>
-                <a href="">Transactions</a>
+                <NavLink to={"/overview"}  className={({ isActive }) => `flex  items-center gap-2 ${isActive ? 'bg-[#01F0D0] p-1 rounded-3xl' : ''}`}><img src={home} alt="" className='h-4' />Overview</NavLink>
+                <NavLink to={'/'} className={({ isActive }) => `flex  items-center gap-2 ${isActive ? 'bg-[#01F0D0] p-1 rounded-3xl' : ''}`}><img src={patient} alt="" className='h-4' />Patients</NavLink>
+                <NavLink to={'/schedule'} className={({ isActive }) => `flex items-center gap-2 ${isActive ? 'bg-[#01F0D0] p-1 rounded-3xl' : ''}`}><img src={calender} alt="" className='h-4' />Schedule</NavLink>
+                <NavLink to={'/messages'} className={({ isActive }) => `flex  items-center gap-2 ${isActive ? 'bg-[#01F0D0] p-1 rounded-3xl' : ''}`}><img src={message} alt="" className='h-4' />Messages</NavLink>
+                <NavLink to={'/transactions'} className={({ isActive }) => `flex  items-center gap-2 ${isActive ? 'bg-[#01F0D0] p-1 rounded-3xl' : ''}`}><img src={card} alt="" className='h-4' />Transactions</NavLink>
             </div>
             <div className='flex items-center space-x-5'>
                 <div className='flex items-center border-r pr-2'>

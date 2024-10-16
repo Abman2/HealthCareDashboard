@@ -7,6 +7,7 @@ import { createBrowserRouter, RouterProvider, createRoutesFromElements, Route } 
 import { PatientHome } from './Pages/PatientHome';
 import { OverviewPage } from './Pages/OverviewPage';
 import { MainOutlet } from './Layout/MainOutlet';
+import ErrorPage from './component/ErrorPage';
 
 function App() {
      const router = createBrowserRouter(
@@ -20,6 +21,7 @@ function App() {
                                    <Route path='/patients/:id' element={<PatientFullDetails />} />
                               </Route>
                          <Route path='/overview' element={<OverviewPage />} />
+                         <Route path='*' element={<ErrorPage/>}/>
                     </Route>
                </>
           )
