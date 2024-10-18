@@ -2,16 +2,16 @@ import { useState, useEffect } from 'react';
 
 export const useFetch = (url) => {
      let username = 'coalition';
-let password = 'skills-test';
-let auth = btoa(`${username}:${password}`);
+     let password = 'skills-test';
+     let auth = btoa(`${username}:${password}`);
      const [data, setData] = useState([]);
      const [loading, setLoading] = useState(true);
      const [error, setError] = useState(null);
      useEffect(() => {
-          fetch(url,{
+          fetch(url, {
                headers: {
-                    'Authorization': `Basic ${auth}`
-               }
+                    Authorization: `Basic ${auth}`,
+               },
           })
                .then((resp) => {
                     if (!resp) {
